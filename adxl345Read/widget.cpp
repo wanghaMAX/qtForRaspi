@@ -102,7 +102,7 @@ void Widget::cal(){
 
     float ax = g*tan(x1);
     float ay = g*tan(y1);
-    float az = g*tan(z1);
+    float az = g*cos(z1);
 
     QString xs;
     xs.sprintf("%f m/s^2",ax);
