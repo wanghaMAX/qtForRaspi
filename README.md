@@ -8,4 +8,5 @@ develop RaspberryPi with Qt, using [wiringPi](<https://github.com/WiringPi/Wirin
 4. gpioRead
 5. gpioCtrl
 6. adxl345 module read and calculate the acceleration
+7. openGL
 
