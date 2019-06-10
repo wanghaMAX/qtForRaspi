@@ -29,11 +29,14 @@ SOURCES += main.cpp\
         widget.cpp \
     smoothcurvegenerator.cpp \
     logo.cpp \
-    glwidget.cpp
+    glwidget.cpp \
+    dialog.cpp
 
 HEADERS  += widget.h \
     smoothcurvegenerator.h \
     logo.h \
-    glwidget.h
+    glwidget.h \
+    dialog.h
 
-FORMS    += widget.ui
+FORMS    += widget.ui \
+    dialog.ui

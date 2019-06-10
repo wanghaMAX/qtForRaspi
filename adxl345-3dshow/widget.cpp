@@ -88,6 +88,7 @@ Widget::Widget(QWidget *parent) :
     xSlider->setValue(180 * 16);
     ySlider->setValue(180 * 16);
     zSlider->setValue(180 * 16);
+
 }
 
 Widget::~Widget()
@@ -215,6 +216,13 @@ void Widget::cal(){
     QString za;
     QTextStream(&za) << "z: " << az << " m/s^2 .";
 
+    QFile file("/home/pi/wangha/qt/qtForRaspi/e.txt");
+    file.open(QIODevice::Append | QIODevice::Text);
+    QString txt;
+    QTextStream(&txt) << ax << "|" << ay << "|" << az << "\n";
+    file.write(txt.toUtf8());
+    file.close();
+
     labelax->setText(xa);
     labelay->setText(ya);
     labelaz->setText(za);
@@ -302,4 +310,10 @@ void Widget::paintEvent(QPaintEvent *) {
     pointsx.clear();
     pointsy.clear();
     pointsz.clear();
+}
+
+void Widget::on_pushButton_clicked()
+{
+    Dialog *history = new Dialog;
+    history->show();
 }

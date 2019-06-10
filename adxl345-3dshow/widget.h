@@ -17,6 +17,8 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <dialog.h>
+#include <QFile>
 
 namespace Ui {
 class Widget;
@@ -31,6 +33,8 @@ QT_END_NAMESPACE
 class GLWidget;
 class MainWindow;
 
+//extern QList<float> f1;
+
 class Widget : public QWidget
 {
     Q_OBJECT
@@ -43,6 +47,8 @@ private slots:
     void read();
     void cal();
     //void show();
+
+    void on_pushButton_clicked();
 
 private:
     Ui::Widget *ui;void adxl345_init(int fd);
@@ -88,6 +94,7 @@ private:
     QLabel *labeldx;
     QLabel *labeldy;
     QLabel *labeldz;
+
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
